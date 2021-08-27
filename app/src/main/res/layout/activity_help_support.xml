@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    tools:context=".activities.HelpSupportActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarlayout"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/teal_200"
+            android:layout_height="wrap_content">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/back"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:layout_width="wrap_content"
+                app:fabSize="mini"
+                android:onClick="backToTask"
+                android:layout_centerVertical="true"
+                android:elevation="0dp"
+                app:elevation="0dp"
+                app:borderWidth="0dp"
+                android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/back"
+                android:background="@color/teal_200"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:title="Help &amp; Support"
+                app:titleTextColor="@color/black"
+                />
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_margin="30dp"
+        android:textIsSelectable="true"
+        android:linksClickable="true"
+        android:autoLink="all"
+        android:textColorLink="@color/teal_200"
+        android:fontFamily="@font/handlee"
+        android:textAlignment="center"
+        android:text="For any queries you can reach out to in2peta@gmail.com"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".activities.ProfileActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarlayout"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/teal_200"
+            android:layout_height="wrap_content">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/back"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:layout_width="wrap_content"
+                app:fabSize="mini"
+                android:onClick="backToTask"
+                android:layout_centerVertical="true"
+                android:elevation="0dp"
+                app:elevation="0dp"
+                app:borderWidth="0dp"
+                android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/back"
+                android:background="@color/teal_200"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:title="Profile"
+                app:titleTextColor="@color/black"
+                />
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/appBarlayout"
+        android:scrollbars="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/firtscard"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/black1"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileIV"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:onClick="getImage"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp" />
+            <TextView
+                android:id="@+id/dateTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/handlee"
+                android:gravity="end"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_below="@id/profileIV"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10dp"
+                />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:id="@+id/secoundcard"
+        android:layout_margin="10dp"
+        android:layout_below="@id/firtscard"
+        >
+        <LinearLayout
+            android:id="@+id/editlayout"
+            android:layout_below="@id/dateTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black1"
+            android:orientation="vertical"
+            >
+            <com.wrapp.floatlabelededittext.FloatLabeledEditText
+                android:layout_width="match_parent"
+                android:background="@color/black1"
+                app:fletBackground="@color/black1"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/nameED"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="3"
+                    android:enabled="false"
+                    android:fontFamily="@font/handlee"
+                    android:textColor="@color/white"
+                    android:drawablePadding="30dp"
+                    android:textColorHint="@color/white"
+                    android:drawableLeft="@drawable/ic_baseline_person_24"
+                    android:drawableTint="@color/white"
+                    android:hint="Name"
+                    android:backgroundTint="@color/teal_200"
+                    />
+            </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+            <com.wrapp.floatlabelededittext.FloatLabeledEditText
+                android:layout_width="match_parent"
+                android:background="@color/black1"
+                app:fletBackground="@color/black1"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/emailED"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="100"
+                    android:maxLines="3"
+                    android:enabled="false"
+                    android:fontFamily="@font/handlee"
+                    android:textColor="@color/white"
+                    android:drawablePadding="30dp"
+                    android:textColorHint="@color/white"
+                    android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
+                    android:drawableTint="@color/white"
+                    android:hint="email"
+                    android:backgroundTint="@color/teal_200"
+                    />
+            </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+            <RelativeLayout
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/codePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/floatableED"
+                    android:layout_alignBottom="@id/floatableED"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    app:ccpDialog_backgroundColor="@color/black"
+                    app:ccpDialog_fastScroller_bubbleTextAppearance="@color/white"
+                    app:ccpDialog_searchEditTextTint="@color/white"
+                    app:ccpDialog_textColor="@color/white" />
+
+                <com.wrapp.floatlabelededittext.FloatLabeledEditText
+                    android:id="@+id/floatableED"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/codePicker"
+                    android:background="@color/black1"
+                    android:visibility="visible"
+                    app:fletBackground="@color/black1">
+
+                    <EditText
+                        android:id="@+id/phoneSignUpED"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/teal_200"
+                        android:drawableLeft="@drawable/ic_baseline_phone_24"
+                        android:drawablePadding="30dp"
+                        android:drawableTint="@color/white"
+                        android:enabled="false"
+                        android:fontFamily="@font/handlee"
+                        android:hint="Add Mobile Number(10)"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
+
+                </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+            </RelativeLayout>
+            <com.wrapp.floatlabelededittext.FloatLabeledEditText
+                android:layout_width="match_parent"
+                android:background="@color/black1"
+                app:fletBackground="@color/black1"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/identityED"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="12"
+                    android:enabled="false"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/handlee"
+                    android:drawablePadding="30dp"
+                    android:textColorHint="@color/white"
+                    android:drawableLeft="@drawable/ic_baseline_iden_ind_24"
+                    android:drawableTint="@color/white"
+                    android:hint="Add Aadhar Number(12)"
+                    android:backgroundTint="@color/teal_200"
+                    />
+            </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+            <com.wrapp.floatlabelededittext.FloatLabeledEditText
+                android:layout_width="match_parent"
+                android:background="@color/black1"
+                app:fletBackground="@color/black1"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/addressED"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="3"
+                    android:enabled="false"
+                    android:fontFamily="@font/handlee"
+                    android:textColor="@color/white"
+                    android:drawablePadding="30dp"
+                    android:textColorHint="@color/white"
+                    android:drawableLeft="@drawable/ic_baseline_home_24"
+                    android:drawableTint="@color/white"
+                    android:hint="Add Address(more than 6)"
+                    android:backgroundTint="@color/teal_200"
+                    />
+            </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/saveBtn"
+                    android:text="Save"
+                    android:onClick="saveProfile"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/handlee"
+                    android:textSize="20sp"
+                    android:layout_alignParentStart="true"
+                    app:icon="@drawable/ic_baseline_save_24"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/editBTN"
+                    android:text="Edit"
+                    android:onClick="edit"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/handlee"
+                    android:layout_alignParentStart="true"
+                    android:textSize="20sp"
+                    app:icon="@drawable/ic_baseline_edit_24"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/verifyBTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/handlee"
+                    android:onClick="verify"
+                    android:text="Verify"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:icon="@drawable/verify" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

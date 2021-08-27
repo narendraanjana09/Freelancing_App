@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/black1"
+    android:layout_height="match_parent"
+    tools:context=".activities.MessageActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarlayout"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/teal_200"
+            android:layout_height="wrap_content">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/back"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:layout_width="wrap_content"
+                app:fabSize="mini"
+                android:onClick="back"
+                android:layout_centerVertical="true"
+                android:elevation="0dp"
+                app:elevation="0dp"
+                app:borderWidth="0dp"
+                android:layout_height="wrap_content"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileView"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/grey"
+                android:layout_toEndOf="@id/back" />
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_toEndOf="@id/profileView"
+                android:background="@color/teal_200"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:title="Messages"
+                app:titleTextColor="@color/black" />
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messagesRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/txt_seen"
+        android:layout_below="@id/appBarlayout" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_seen"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="gone"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@id/messageEDLayout"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/infoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/handlee"
+        android:visibility="visible"
+        android:text="Start Conversation Now"
+        android:textColor="@color/white" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/messageEDLayout"
+        android:background="@color/white"
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/text_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/btn_send"
+            android:background="@null"
+            android:elevation="20dp"
+            android:hint="Type a message..."
+            android:padding="@dimen/padding_10_dp"
+            android:textColor="@color/black_shade"
+            android:textColorHint="@color/black_shade"
+            android:textSize="16sp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/white"
+            android:onClick="sendMessage"
+            android:src="@drawable/ic_send"
+            app:borderWidth="0dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black1"
+    android:layout_height="match_parent">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/closeFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabCustomSize="35dp"
+        app:elevation="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="5dp"
+        android:elevation="0dp"
+        app:borderWidth="0dp"
+        android:src="@drawable/ic_baseline_close_24"
+        />
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Queue History"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_alignTop="@id/closeFAB"
+        android:layout_alignBottom="@id/closeFAB"
+        android:layout_toStartOf="@id/closeFAB"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/titleTV"
+        android:layout_margin="10dp"
+        android:scrollbars="vertical"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+    <include
+        android:id="@+id/task_lay"
+        layout="@layout/task_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:id="@+id/nameLayout"
+        android:layout_width="match_parent"
+        android:background="@color/black1"
+        app:fletBackground="@color/black1"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content">
+
+        <com.nsa.labelimages.Extra.LimitedEditText
+            android:id="@+id/taskNameED"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:maxLength="50"
+            android:textColor="@color/white"
+            android:fontFamily="@font/handlee"
+            android:drawablePadding="30dp"
+            android:textColorHint="@color/white"
+            android:drawableLeft="@drawable/ic_baseline_assessment_24"
+            android:drawableTint="@color/white"
+            android:hint="Enter Task Name"
+            android:backgroundTint="@color/teal_200"
+            />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:background="@color/black1"
+        android:layout_marginTop="10dp"
+        android:id="@+id/noteLayout"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content">
+
+        <com.nsa.labelimages.Extra.LimitedEditText
+            android:id="@+id/taskNoteED"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textCapSentences|textMultiLine"
+            android:textColor="@color/white"
+            android:fontFamily="@font/handlee"
+            android:maxLength="500"
+            android:autoLink="all"
+            android:linksClickable="true"
+            android:textColorLink="@color/teal_700"
+            android:maxLines="4"
+            android:drawablePadding="30dp"
+            android:textColorHint="@color/white"
+            android:drawableLeft="@drawable/ic_baseline_note_add_24"
+            android:drawableTint="@color/white"
+            android:hint="Describe You'r Task"
+            android:backgroundTint="@color/teal_200"
+            />
+
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:background="@color/black1"
+        app:fletBackground="@color/black1"
+        android:layout_marginTop="10dp"
+        android:id="@+id/valueLayout"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/taskValueED"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="numberDecimal"
+            android:textColor="@color/white"
+            android:fontFamily="@font/handlee"
+            android:maxLength="7"
+            android:drawablePadding="30dp"
+            android:textColorHint="@color/white"
+            android:drawableLeft="@drawable/rupee"
+            android:drawableTint="@color/white"
+            android:hint="Task value"
+            android:backgroundTint="@color/teal_200"
+            />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/black1"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:hint="Select a Task Type"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp"
+            app:spinner_arrow_gravity="end"
+            app:spinner_arrow_padding="8dp"
+            app:spinner_divider_color="@color/white1"
+            app:spinner_divider_show="true"
+            app:spinner_divider_size="0.4dp"
+            app:spinner_item_array="@array/task_types"
+            app:spinner_popup_animation="fade"
+            app:spinner_popup_background="@color/black2"
+            app:spinner_popup_elevation="14dp" />
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:background="@color/black1"
+            app:fletBackground="@color/black1"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:id="@+id/extraTaskLayout"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_height="wrap_content">
+
+            <com.nsa.labelimages.Extra.LimitedEditText
+                android:id="@+id/extraTaskED"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:fontFamily="@font/handlee"
+                android:maxLength="100"
+                android:drawablePadding="30dp"
+                android:textColorHint="@color/white"
+                android:drawableLeft="@drawable/ic_baseline_description_24"
+                android:drawableTint="@color/white"
+                android:hint="Describe Extra Task"
+                android:backgroundTint="@color/teal_200"
+                />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <RelativeLayout
+            android:id="@+id/addImagesLayout"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:layout_below="@id/spinner"
+            android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/testLayout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/addTestImagesBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Test Dataset"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:layout_marginEnd="20dp"
+            app:icon="@drawable/unicorn_ic_folder"
+            />
+        <TextView
+            android:id="@+id/testImagesCuntTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No folder Added"
+            android:textColor="@color/white"
+            android:fontFamily="@font/handlee"
+            android:gravity="center_vertical|center"
+            android:drawableTint="@color/white"
+            android:drawableRight="@drawable/ic_clear_black_24dp"
+            />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/addImagesBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Dataset Folder"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:textSize="12sp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/testLayout"
+        app:icon="@drawable/unicorn_ic_folder"
+        />
+    <TextView
+        android:id="@+id/imagesCountTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Folder Added"
+        android:textColor="@color/white"
+        android:fontFamily="@font/handlee"
+        android:layout_toEndOf="@id/addImagesBTN"
+        android:layout_alignTop="@id/addImagesBTN"
+        android:layout_alignBottom="@id/addImagesBTN"
+        android:gravity="center_vertical|center"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentEnd="true"
+        android:drawableTint="@color/white"
+        android:layout_marginEnd="20dp"
+        android:drawableRight="@drawable/ic_clear_black_24dp"
+        />
+        </RelativeLayout>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/postTaskBTN"
+        app:icon="@drawable/rupee"
+        android:text="Add Money"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/info"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:textColor="@color/white"
+
+            />
+    </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

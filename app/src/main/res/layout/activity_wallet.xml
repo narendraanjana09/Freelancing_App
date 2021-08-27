@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".activities.WalletActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarlayout"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/teal_200"
+            android:layout_height="wrap_content">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/back"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:layout_width="wrap_content"
+                app:fabSize="mini"
+                android:onClick="backToTask"
+                android:layout_centerVertical="true"
+                android:elevation="0dp"
+                app:elevation="0dp"
+                app:borderWidth="0dp"
+                android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/back"
+                android:layout_toStartOf="@id/addMoney"
+                android:background="@color/teal_200"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:title="Wallet"
+                app:titleTextColor="@color/black"
+                />
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/addMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:icon="@drawable/add_money"
+                android:text="Add Money"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                android:fontFamily="@font/handlee"
+                android:onClick="addMoney"
+                />
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/balanceCard"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="20dp"
+        android:layout_below="@id/appBarlayout"
+        android:layout_margin="30dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/black1"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balance"
+                android:fontFamily="@font/handlee"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="20dp"
+                android:textColor="@color/white1"
+                android:textSize="19sp"/>
+
+            <TextView
+                android:id="@+id/balanceTV"
+                android:text="₹ 400"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_margin="20dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/handlee"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/infoTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/balanceTV"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:drawableLeft="@drawable/ic_baseline_info_24"
+                android:drawableTint="@color/white"
+                android:drawablePadding="20dp"
+                android:text="to redeem your balance must be more than ₹50"
+                android:fontFamily="@font/handlee"
+                android:textColor="@color/white1"
+                android:textSize="17sp"/>
+            <LinearLayout
+                android:id="@+id/payMethodLayout"
+                android:layout_width="match_parent"
+                android:layout_below="@id/infoTV"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Payment Methods"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/handlee"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/paymentRG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <RadioButton
+                        android:id="@+id/paytm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Paytm"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/handlee"
+                        android:paddingStart="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/paytm"
+                        android:drawableTint="@null"
+                        android:drawablePadding="10dp"
+                        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                        />
+                    <RadioButton
+                        android:id="@+id/phonepe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PhonePe"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/handlee"
+                        android:paddingStart="10dp"
+                        android:drawableLeft="@drawable/phonepay"
+                        android:drawableTint="@null"
+                        android:drawablePadding="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:button="@null"
+                        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                        />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/amountEditText"
+                    android:hint="Enter Amount"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:backgroundTint="@color/teal_200"
+                    android:inputType="number"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:maxLength="7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/numberEd"
+                    android:hint="Enter Number"
+                    android:textAlignment="center"
+
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:backgroundTint="@color/teal_200"
+                    android:inputType="number"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:maxLength="10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/redeemBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/payMethodLayout"
+                android:layout_marginTop="20dp"
+                android:onClick="redeem"
+                android:text="Redeem"
+                app:icon="@drawable/ic_baseline_redeem_24"
+                android:textAllCaps="false"
+                android:layout_marginBottom="20dp"
+                />
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/creditCard"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="20dp"
+        android:layout_below="@id/balanceCard"
+        android:layout_margin="30dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/black1"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Credit Balance"
+                android:fontFamily="@font/handlee"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="20dp"
+                android:textColor="@color/white1"
+                android:textSize="19sp"/>
+
+            <TextView
+                android:id="@+id/creditTV"
+                android:text="₹ 400"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_margin="20dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/handlee"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/creditHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/creditHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                app:fabSize="mini"
+                android:onClick="showCreditHistory"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/history"
+                android:elevation="0dp"
+                app:elevation="0dp"
+                app:borderWidth="0dp"
+                />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/requestCard"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="20dp"
+        android:visibility="gone"
+        android:layout_below="@id/creditCard"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/black1"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/appliedTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Requested Balance"
+                android:fontFamily="@font/handlee"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="20dp"
+                android:textColor="@color/white1"
+                android:textSize="19sp"/>
+
+            <TextView
+                android:id="@+id/requestTV"
+                android:text="₹ 400"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_margin="20dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/handlee"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/queueHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/queueHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                app:fabSize="mini"
+                android:onClick="showQueueHistory"
+                android:src="@drawable/ic_baseline_history_24"
+                android:elevation="0dp"
+                app:elevation="0dp"
+                app:borderWidth="0dp"
+                />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

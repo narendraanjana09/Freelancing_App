@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/namePassLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        android:visibility="visible"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="getProfileImage"
+                android:src="@drawable/ic_baseline_person_24"
+                app:civ_border_color="@color/chocalte"
+                app:civ_border_width="1dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/profileImageView"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toEndOf="@id/profileImageView"
+                android:elevation="20dp"
+                app:boxStrokeColor="@color/chocalte"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/chocalte">
+
+                <EditText
+                    android:id="@+id/nameSignUpED"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/handlee"
+                    android:hint="Enter Name"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white1"
+                    android:textCursorDrawable="@drawable/sign_in_up_cursor" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/countryCodePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                app:ccpDialog_backgroundColor="@color/black"
+                app:ccpDialog_fastScroller_bubbleTextAppearance="@color/white"
+                app:ccpDialog_searchEditTextTint="@color/white"
+                app:ccpDialog_textColor="@color/white" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneEdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/countryCodePicker"
+                android:elevation="20dp"
+                app:boxStrokeColor="@color/chocalte"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/chocalte">
+
+                <EditText
+                    android:id="@+id/phoneSignUpED"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/handlee"
+                    android:hint="Enter Mobile(10)"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white1"
+                    android:textCursorDrawable="@drawable/sign_in_up_cursor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </RelativeLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/promoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@id/countryCodePicker"
+            android:elevation="20dp"
+            app:boxStrokeColor="@color/chocalte"
+            app:hintEnabled="true"
+            app:hintTextColor="@color/chocalte">
+
+            <EditText
+                android:id="@+id/promoSignUpED"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/handlee"
+                android:hint="Enter PromoCode(optional)"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white1"
+                android:textCursorDrawable="@drawable/sign_in_up_cursor" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</RelativeLayout>

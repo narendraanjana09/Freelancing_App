@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="10dp"
+    android:id="@+id/infoCard"
+    app:cardCornerRadius="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/black1"
+        android:padding="5dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/taskNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:layout_alignParentStart="true"
+            android:textSize="17sp"
+            android:text="Annotate Cars"
+            android:fontFamily="@font/handlee"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/taskValueTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="₹0.5/image"
+            android:fontFamily="@font/handlee"
+            android:layout_below="@id/taskNameTV"
+            android:layout_alignStart="@id/taskNameTV"
+            android:textColor="@color/white"
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/openBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            app:fabSize="mini"
+            app:borderWidth="0dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:layout_below="@id/taskValueTV"
+            />
+
+
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>

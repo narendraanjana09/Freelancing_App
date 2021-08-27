@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black1"
+    tools:context=".activities.TaskInfoActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarlayout"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/teal_200"
+            android:layout_height="wrap_content">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/back"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:layout_width="wrap_content"
+                app:fabSize="mini"
+                android:onClick="back"
+                android:layout_centerVertical="true"
+                android:elevation="0dp"
+                app:elevation="0dp"
+                app:borderWidth="0dp"
+                android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/back"
+                android:background="@color/teal_200"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:title="Task Info"
+                app:titleTextColor="@color/black"
+                />
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/appBarlayout"
+        android:layout_height="match_parent">
+
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardElevation="10dp"
+        android:id="@+id/infoCard"
+
+        app:cardBackgroundColor="@color/black2"
+        app:cardCornerRadius="10dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/prevImageView"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:layout_height="200dp"/>
+            <TextView
+                android:id="@+id/taskNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/prevImageView"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="Task Name"
+                android:fontFamily="@font/handlee"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/taskValueTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:layout_marginStart="20dp"
+                android:text="Task Value"
+                android:fontFamily="@font/handlee"
+                android:layout_toEndOf="@id/taskNameTV"
+                android:layout_alignTop="@id/taskNameTV"
+                android:layout_alignBottom="@id/taskNameTV"
+                android:gravity="center"
+                android:textColor="@color/white"
+                />
+            <TextView
+                android:id="@+id/userNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="12/7/2021"
+                android:layout_below="@id/taskNameTV"
+                android:layout_alignParentStart="true"
+                android:textSize="17sp"
+                android:fontFamily="@font/handlee"
+                android:textColor="@color/white"
+                />
+            <TextView
+                android:id="@+id/postedDateTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="12/7/2021"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/handlee"
+                android:layout_alignTop="@id/userNameTV"
+                android:layout_toEndOf="@id/userNameTV"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/taskInfoTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userNameTV"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/handlee"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:elevation="20dp"
+                android:background="@color/black2"
+                android:layout_below="@id/taskInfoTV"
+                app:boxStrokeColor="@color/chocalte"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/chocalte">
+
+                <EditText
+                    android:id="@+id/detailED"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/handlee"
+                    android:hint="Describe Yourself"
+                    android:inputType="text"
+                    android:maxLength="300"
+                    android:maxLines="5"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textCursorDrawable="@drawable/sign_in_up_cursor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/filesnameTV"
+                android:textColor="@color/white1"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/note"
+                android:layout_alignEnd="@id/note"
+                android:layout_below="@id/note"
+                />
+
+
+           <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="20dp"
+               android:elevation="20dp"
+               android:id="@+id/document"
+               android:layout_below="@id/filesnameTV"
+               >
+               <com.google.android.material.floatingactionbutton.FloatingActionButton
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:onClick="addAttachment"
+                   app:fabSize="mini"
+                   android:src="@drawable/ic_baseline_add_24"
+                   android:layout_gravity="center_vertical|end"
+                   />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/chocalte"
+                android:background="@color/black2"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/chocalte">
+
+                <EditText
+                    android:id="@+id/documentED"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/handlee"
+                    android:hint="Attach a Document"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:maxLength="200"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/black"
+                    android:textCursorDrawable="@drawable/sign_in_up_cursor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+           </FrameLayout>
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/applyBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/document"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:onClick="saveStart"
+                android:text="Apply"
+                android:textAllCaps="false"
+                app:icon="@drawable/apply_icon" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    </ScrollView>
+
+</RelativeLayout>

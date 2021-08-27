@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/task_drawer"
+    tools:openDrawer="start"
+    android:layout_height="match_parent"
+    tools:context=".activities.TaskActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarlayout"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/teal_200"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:onClick="openprofilemenu"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="closeNotificationDialog"
+                android:background="@color/teal_200"
+                android:layout_toEndOf="@id/profileView"
+                android:layout_toStartOf="@id/addTask"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:title="@string/app_name"
+                app:titleTextColor="@color/black"
+                />
+
+           <RelativeLayout
+               android:id="@+id/uploadProgressLayout"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerVertical="true"
+               android:layout_toStartOf="@id/addTask"
+               >
+               <com.google.android.material.floatingactionbutton.FloatingActionButton
+                   android:id="@+id/uploadFAB"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/ic_baseline_cloud_upload_24"
+                   app:fabSize="mini"
+                   android:onClick="showUploadingTasks"
+                   android:layout_centerInParent="true"
+                   />
+
+               <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+                   android:id="@+id/circular_progress"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignStart="@id/uploadFAB"
+                   android:layout_alignEnd="@id/uploadFAB"
+                   app:direction="clockwise"
+                   app:drawDot="false"
+                   app:enableProgressAnimation="true"
+                   app:progressBackgroundColor="@color/teal_200"
+                   app:progressColor="@color/black"
+                   app:textSize="1dp" />
+
+           </RelativeLayout>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_post_add_24"
+                app:fabSize="mini"
+                android:visibility="gone"
+                app:borderWidth="0dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/noti"
+                android:onClick="openAddTask"
+                />
+            <FrameLayout
+                android:id="@+id/noti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/messageLayout"
+                >
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openNotifications"
+                    android:src="@drawable/ic_baseline_notifications_active_24"
+                    app:borderWidth="0dp"
+                    app:fabSize="mini" />
+                <TextView
+                    android:id="@+id/notificationCountTV"
+                    android:layout_toRightOf="@+id/notification"
+                    android:layout_marginEnd="12dp"
+                    android:fontFamily="@font/handlee"
+                    android:layout_width="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:elevation="16dp"
+                    android:textColor="@color/black"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/messageLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                >
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/messageBTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openMessages"
+                    android:src="@drawable/ic_baseline_message_24"
+                    app:borderWidth="0dp"
+                    app:fabSize="mini" />
+                <TextView
+                    android:id="@+id/messageCountTextView"
+                    android:layout_toRightOf="@+id/notification"
+                    android:layout_marginEnd="12dp"
+                    android:fontFamily="@font/handlee"
+                    android:layout_width="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:elevation="16dp"
+                    android:textColor="@color/black"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+            </FrameLayout>
+
+
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            app:tabInlineLabel="true"
+            app:tabIndicatorGravity="top"
+            android:background="@color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/tabLayout"
+            android:layout_below="@id/appBarlayout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notificationsLayout"
+            android:layout_width="match_parent"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_marginStart="30dp"
+            android:animateLayoutChanges="true"
+            android:visibility="gone"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/round_notifications"
+            android:layout_below="@id/appBarlayout"
+            android:layout_height="wrap_content"
+            app:layout_constraintHeight_max="300dp"
+            app:layout_constrainedHeight="true"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notificationRV"
+                android:layout_width="match_parent"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/closeIMG"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/noNotiTextView"
+                android:layout_width="wrap_content"
+                android:text="No Notifications"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/closeIMG"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/closeIMG"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:onClick="closeNotificationDialog"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ic_baseline_close_24"
+                />
+            <ImageView
+                android:id="@+id/deleteIMG"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:onClick="deleteNotifications"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ic_baseline_delete_forever_24"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/black1"
+        app:itemTextColor="@color/white"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@color/white"
+        app:headerLayout="@layout/task_drawer_header"
+        android:id="@+id/task_navigation_view"
+        app:menu="@menu/task_drawer_menu" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_btn"
+                android:textColor="@color/black"
+                android:drawableLeft="@drawable/logout"
+                android:gravity="center"
+                android:onClick="signout"
+                android:text="sign-out"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.TaskActivity"
+    tools:showIn="@layout/task_drawer_header">
+
+            <item
+                android:id= "@+id/wallet"
+                android:icon= "@drawable/ic_baseline_account_balance_wallet_24"
+                android:title= "Wallet" />
+            <item
+                android:id= "@+id/appliedTask"
+                android:icon= "@drawable/ic_baseline_assessment_24"
+                android:title= "Applied Tasks" />
+            <item
+                android:id= "@+id/refer"
+                android:iconTint="@null"
+                android:icon= "@drawable/refer"
+                android:title= "Refer &amp; Earn"
+                />
+            <item
+                android:id="@+id/support"
+                android:icon="@drawable/ic_baseline_support_24"
+                android:title="Help &amp; Support"/>
+    <item
+        android:id="@+id/shareApp"
+        android:icon="@drawable/ic_baseline_share_24"
+        android:title="Share App"/>
+
+
+
+
+
+</menu>

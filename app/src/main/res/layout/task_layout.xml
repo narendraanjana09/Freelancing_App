@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardElevation="10dp"
+    android:id="@+id/infoCard"
+    app:cardBackgroundColor="@color/black2"
+    app:cardCornerRadius="10dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/prevImageView"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:layout_height="180dp"/>
+        <TextView
+            android:id="@+id/taskNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/prevImageView"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Task Name"
+            android:fontFamily="@font/handlee"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/taskValueTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            android:text="Task Value"
+            android:fontFamily="@font/handlee"
+            android:layout_toEndOf="@id/taskNameTV"
+            android:layout_alignTop="@id/taskNameTV"
+            android:layout_alignBottom="@id/taskNameTV"
+            android:gravity="center"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/userNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="12/7/2021"
+            android:layout_below="@id/taskNameTV"
+            android:fontFamily="@font/handlee"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/postedDateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="12/7/2021"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/handlee"
+            android:layout_alignTop="@id/userNameTV"
+            android:layout_toEndOf="@id/userNameTV"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/addPrevImgBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add preview image"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:fontFamily="@font/handlee"
+            android:drawableTop="@drawable/add_image"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:id="@+id/prevIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:fontFamily="@font/handlee"
+            android:drawableTint="@color/white"
+            android:text="preview "
+            android:drawableRight="@drawable/ic_baseline_preview_24"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            />
+
+
+
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>

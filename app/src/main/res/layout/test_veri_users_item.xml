@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@color/black2"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Narendra Singh Anjana"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:textSize="18sp"
+            android:id="@+id/nameTV"
+            android:textColor="@color/white"
+            android:fontFamily="@font/handlee"
+            />
+        <TextView
+            android:id="@+id/dateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Narendra Singh Anjana"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:layout_below="@id/nameTV"
+            android:textColor="@color/white"
+            android:fontFamily="@font/handlee"
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/openBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            app:fabSize="mini"
+            android:rotation="-90"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/down_arrow_hide"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            app:borderWidth="0dp"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

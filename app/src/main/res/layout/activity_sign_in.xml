@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black1"
+    android:orientation="vertical"
+    tools:context=".activities.SignInActivity">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:orientation="vertical"
+      android:weightSum="1"
+      android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+  <ImageView
+      android:id="@+id/logo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/logo"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+  <LinearLayout
+      android:id="@+id/lSLayout"
+      android:layout_width="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/logo"
+      app:layout_constraintBottom_toTopOf="@id/layoutLS"
+      android:layout_height="wrap_content">
+  <TextView
+      android:id="@+id/loginTV"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/handlee"
+      android:text="Sign in"
+      android:padding="5dp"
+      android:onClick="showLoginLayout"
+      android:textColor="@color/chocalte"
+      android:textSize="22sp"
+
+      />
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/handlee"
+      android:text="or"
+      android:layout_marginStart="10dp"
+      android:layout_marginEnd="10dp"
+      android:id="@+id/orTV"
+      android:textColor="@color/white_smoke"
+      android:textSize="18sp"
+
+      />
+  <TextView
+      android:id="@+id/signUPTV"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/handlee"
+      android:text="Sign up"
+      android:padding="5dp"
+      android:onClick="showSignUpLayout"
+      android:textColor="@color/white1"
+      android:textSize="22sp"
+      />
+
+  </LinearLayout>
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:id="@+id/layoutLS"
+      app:layout_constraintTop_toBottomOf="@id/lSLayout"
+      app:layout_constraintBottom_toTopOf="@id/btnSISU"
+      android:layout_height="wrap_content">
+  <LinearLayout
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:id="@+id/loginLayout"
+      android:layout_width="match_parent"
+      android:orientation="vertical"
+      android:visibility="gone"
+      android:elevation="20dp"
+      android:layout_margin="10dp"
+      android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/emailED"
+        android:layout_width="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="enter email"
+        android:textColorHint="@color/white1"
+        android:textColor="@color/white"
+        android:inputType="textEmailAddress"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/handlee"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/chocalte"
+        android:drawableTint="@color/chocalte"
+        android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pwdLayout"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        >
+      <EditText
+          android:id="@+id/pwdED"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="enter password"
+          android:textColorHint="@color/white1"
+          android:textColor="@color/white"
+          android:drawablePadding="20dp"
+          android:inputType="textPassword"
+          android:fontFamily="@font/handlee"
+          android:textSize="18sp"
+          android:backgroundTint="@color/chocalte"
+          android:drawableTint="@color/chocalte"
+          android:drawableLeft="@drawable/ic_baseline_lock_24"
+        />
+
+      <TextView
+          android:id="@+id/pwdHSTV"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignTop="@id/pwdED"
+          android:visibility="gone"
+          android:background="?attr/selectableItemBackground"
+          android:layout_alignBottom="@id/pwdED"
+          android:layout_alignParentEnd="true"
+          android:layout_marginEnd="10dp"
+          android:drawableLeft="@drawable/ic_baseline_visibility_24"
+          android:drawableTint="@color/chocalte"
+          android:onClick="showHidePWD" />
+    </RelativeLayout>
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:orientation="horizontal"
+         android:layout_margin="10dp"
+         android:layout_gravity="center_horizontal"
+         android:layout_height="wrap_content">
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Forgot Password ?"
+             android:textColor="@color/white"
+             android:fontFamily="@font/handlee"
+             />
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="reset"
+             android:onClick="startReset"
+             android:layout_marginStart="10dp"
+             android:padding="5dp"
+             android:textSize="18sp"
+             android:textColor="@color/chocalte"
+             android:fontFamily="@font/handlee"
+             />
+
+
+
+     </LinearLayout>
+  </LinearLayout>
+
+
+      <LinearLayout
+          android:id="@+id/signUpLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="20dp"
+          android:layout_marginTop="10dp"
+          android:layout_marginEnd="20dp"
+          android:layout_marginBottom="10dp"
+          android:orientation="vertical"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent">
+
+
+          <com.google.android.material.textfield.TextInputLayout
+              android:id="@+id/emailLay"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:elevation="20dp"
+              app:boxStrokeColor="@color/chocalte"
+              app:hintEnabled="true"
+              app:hintTextColor="@color/chocalte">
+
+              <EditText
+                  android:id="@+id/emailSignUpED"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/handlee"
+                  android:hint="Enter Email*"
+                  android:inputType="textEmailAddress"
+                  android:textColor="@color/white"
+                  android:textColorHint="@color/white1"
+                  android:textCursorDrawable="@drawable/sign_in_up_cursor" />
+
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <com.google.android.material.textfield.TextInputLayout
+              android:id="@+id/pwdL1"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:layout_marginBottom="20dp"
+              android:backgroundTint="@color/chocalte"
+              android:elevation="20dp"
+              app:boxStrokeColor="@color/chocalte"
+              app:hintEnabled="true"
+              app:hintTextColor="@color/chocalte"
+              app:passwordToggleEnabled="true"
+              app:passwordToggleTint="@color/chocalte">
+
+              <EditText
+                  android:id="@+id/passwordSignUpED1"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/handlee"
+                  android:hint="Enter Password*"
+                  android:inputType="textPassword"
+                  android:textColor="@color/white"
+                  android:textColorHint="@color/white1"
+                  android:textCursorDrawable="@drawable/sign_in_up_cursor"
+                  android:textSize="18sp" />
+
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <com.google.android.material.textfield.TextInputLayout
+              android:id="@+id/pwdL2"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="10dp"
+              android:backgroundTint="@color/chocalte"
+              android:elevation="20dp"
+              app:boxStrokeColor="@color/chocalte"
+              app:hintEnabled="true"
+              app:hintTextColor="@color/chocalte"
+              app:passwordToggleEnabled="true"
+              app:passwordToggleTint="@color/chocalte">
+
+              <EditText
+                  android:id="@+id/passwordSignUpED2"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/handlee"
+                  android:hint="Confirm Password*"
+                  android:inputType="textPassword"
+                  android:textColor="@color/white"
+                  android:textColorHint="@color/white1"
+                  android:textCursorDrawable="@drawable/sign_in_up_cursor"
+                  android:textSize="18sp" />
+
+          </com.google.android.material.textfield.TextInputLayout>
+          <com.google.android.material.textfield.TextInputLayout
+              android:id="@+id/refferalLayout"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="10dp"
+              android:layout_marginBottom="20dp"
+              android:layout_toRightOf="@id/countryCodePicker"
+              android:elevation="20dp"
+              app:boxStrokeColor="@color/chocalte"
+              app:hintEnabled="true"
+              app:hintTextColor="@color/chocalte">
+
+              <EditText
+                  android:id="@+id/refferalED"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/handlee"
+                  android:hint="Enter Referral Code (optional)"
+                  android:inputType="text"
+                  android:maxLength="28"
+                  android:textColor="@color/white"
+                  android:textColorHint="@color/white1"
+                  android:textCursorDrawable="@drawable/sign_in_up_cursor" />
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:drawableLeft="@drawable/ic_baseline_info_24"
+              android:drawablePadding="10dp"
+              android:drawableTint="@color/white"
+              android:fontFamily="@font/handlee"
+              android:gravity="center_vertical"
+              android:text="We've to verify your email to begin sign up(* required)"
+              android:textColor="@color/white"
+              android:textStyle="bold" />
+      </LinearLayout>
+
+
+</RelativeLayout>
+  <RelativeLayout
+      android:id="@+id/btnSISU"
+      android:layout_width="wrap_content"
+      app:layout_constraintBottom_toTopOf="@id/orTV1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/layoutLS"
+      app:layout_constraintStart_toStartOf="parent"
+      android:layout_height="wrap_content">
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/signInBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="signIn"
+        android:text="Sign In"
+        android:visibility="gone"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:icon="@drawable/login" />
+
+      <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+          android:id="@+id/verifyBTN"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:onClick="verifyEmail"
+          android:text="Verify Email"
+          android:textAllCaps="false"
+          android:textColor="@color/black"
+          app:icon="@drawable/verified_users"
+          app:iconTint="@color/black" />
+  </RelativeLayout>
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/handlee"
+      android:text="or"
+      app:layout_constraintBottom_toTopOf="@id/google_signIn_BTN"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/btnSISU"
+      android:layout_margin="20dp"
+      app:layout_constraintStart_toStartOf="parent"
+      android:id="@+id/orTV1"
+      android:textColor="@color/white1"
+      android:textSize="18sp"
+
+      />
+  <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="80dp"
+      android:id="@+id/google_signIn_BTN"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      android:onClick="login"
+      app:iconTint="@null"
+      android:textColor="@color/black"
+      android:text="Sign-In with Google"
+      android:textAllCaps="false"
+      app:icon="@drawable/google_icon"
+      />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </LinearLayout>
+</ScrollView>
