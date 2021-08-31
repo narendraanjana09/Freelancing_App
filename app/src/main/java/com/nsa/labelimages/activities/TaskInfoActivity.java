@@ -14,6 +14,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.provider.OpenableColumns;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.StorageReference;
 
@@ -74,8 +77,60 @@ public class TaskInfoActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
+        if(STARTED){
+
+            AlertDialog.Builder dialog = new AlertDialog.Builder(TaskInfoActivity.this, AlertDialog.THEME_DEVICE_DEFAULT_DARK);
+            dialog.setCancelable(false);
+            dialog.setTitle("Upload Project");
+            dialog.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+            dialog.setNegativeButton("no", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    count=filesReference.size()-1;
+                    progress=new Progress(TaskInfoActivity.this);
+                    progress.setTitle("Connecting...");
+                    progress.show();
+                   deleteFiles();
+
+                }
+            });
+            dialog.show();
+        }else{
         finish();
+        }
     }
+
+    int count=0;
+    private void deleteFiles() {
+        filesReference.get(count).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(@NonNull Void unused) {
+                   count--;
+                   if(count<0){
+                       progress.dismiss();
+                       finish();
+
+                   }else{
+                   deleteFiles();
+
+               }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e(TAG,e.getMessage());
+                Toast.makeText(TaskInfoActivity.this, "error", Toast.LENGTH_SHORT).show();
+                progress.dismiss();
+                finish();
+            }
+        });
+    }
+    String TAG="taskInfor";
 
     public void saveStart(View view) {
         String detail=detailED.getText().toString();
@@ -210,11 +265,15 @@ public class TaskInfoActivity extends AppCompatActivity {
         dialog.show();
 
     }
+    boolean STARTED=false;
     List<File> filesList=new ArrayList<>();
+    List<StorageReference> filesReference=new ArrayList<>();
 
     private void uploadFile(File file) {
-        StorageReference storageReference = new Storage().getTaskImagesReference().child(current_task_model.getTask_id())
-                .child(firebaseUser.getUid()).child(file.getFile_name());
+        StorageReference storageReference = new Storage().getGetUsersRefernce()
+                .child(firebaseUser.getUid())
+                .child(current_task_model.getTask_id())
+                .child(file.getFile_name());
 
         Progress progress=new Progress(this);
         progress.setTitle("Uploading...");
@@ -236,8 +295,10 @@ public class TaskInfoActivity extends AppCompatActivity {
                     // dialog box will be dismissed
                     Uri uri=task.getResult();
                     file.setLink(uri.toString());
+                    filesReference.add(storageReference);
                     fileNameTV.append(file.getFile_name()+"\n");
                     filesList.add(file);
+                    STARTED=true;
                     Toast.makeText(TaskInfoActivity.this, "Uploaded Success", Toast.LENGTH_SHORT).show();
 
 

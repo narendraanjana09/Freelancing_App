@@ -7,6 +7,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -54,8 +55,9 @@ public class MyTasksActivity extends AppCompatActivity {
         OnSyncUserData onSyncUserData =new OnSyncUserData() {
             @Override
             public void newUserData(UserModel userModel) {
-
-                checkAppliedAndVerified();
+                adapter=new AppliedAdaper(userModel.getApplicaModelList(),MyTasksActivity.this);
+                appliedRV.setAdapter(adapter);
+              //  checkAppliedAndVerified();
             }
 
             @Override

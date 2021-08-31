@@ -1,6 +1,7 @@
 package com.nsa.labelimages.Adapters;
 
 import android.content.Context;
+import android.os.Build;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,18 +43,28 @@ public class AppliedAdaper extends RecyclerView.Adapter<AppliedAdaper.ViewHolder
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
         ApplicationModel model=applicationModelList.get(position);
         String htmlString="<u>"+model.getTask_name()+"</u>";
         holder.nameTV.setText(Html.fromHtml(htmlString));
+        int color=context.getColor(R.color.red1);
         if(model.getTask_status().equals("2")){
-            holder.statusTV.setText("Task Viewed");
+             color=context.getColor(R.color.green);
+            holder.statusTV.setText("Viewed");
         }else if(model.getTask_status().equals("1")){
-            holder.statusTV.setText("You're a good fit");
+            color=context.getColor(R.color.teal_200);
+            holder.statusTV.setText("You're a good fit\nUser will soon message you!");
         }else if(model.getTask_status().equals("3")){
+            color=context.getColor(R.color.red);
             holder.statusTV.setText("You're not a good fit");
+        }else if(model.getTask_status().equals("0")){
+            color=context.getColor(R.color.white);
+            holder.statusTV.setText("Applied");
         }
+        holder.statusTV.setTextColor(color);
+        holder.statusTV.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
 
         holder.postedDateTV.setText("Posted Date: "+model.getTask_post_date());

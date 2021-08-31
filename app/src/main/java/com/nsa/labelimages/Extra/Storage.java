@@ -12,7 +12,7 @@ public class Storage {
         storageReference = storage.getReference().child("AllInOne").child("Annotation");
         testImagesReference =storageReference.child("Test Images");
         taskImagesReference =storageReference.child("Task Images");
-        getUsersRefernce =storageReference.child("users");
+        getUsersRefernce =storage.getReference().child("AllInOne").child("users");
     }
 
     public StorageReference getTaskImagesReference() {
