@@ -37,17 +37,17 @@
             android:layout_alignStart="@id/taskNameTV"
             android:textColor="@color/white"
             />
+
         <TextView
             android:id="@+id/postedDateTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:text="12/7/2021"
-            android:fontFamily="@font/handlee"
             android:layout_below="@id/taskValueTV"
             android:layout_alignStart="@id/taskValueTV"
+            android:fontFamily="@font/handlee"
+            android:text="12/7/2021"
             android:textColor="@color/white"
-            />
+            android:textSize="17sp" />
         <TextView
             android:id="@+id/appliedDateTV"
             android:layout_width="wrap_content"
@@ -70,6 +70,19 @@
             android:text="not verified yet"
             android:textColor="@color/red"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/taskDesTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/handlee"
+            android:text="Task Description:-"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_below="@id/taskStatusTV"
+            android:layout_margin="5dp"
+            />
 
 
     </RelativeLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.nsa.labelimages.maineditor.MovableFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.nsa.flexjobs.maineditor.MovableFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
               android:scaleType="fitXY"
               android:src="@drawable/rectangle_red"
               />
-           <com.nsa.labelimages.maineditor.MovableImageView
+           <com.nsa.flexjobs.maineditor.MovableImageView
                android:id="@+id/imgPhotoEditorDrag"
                android:layout_width="25dp"
                android:layout_height="25dp"
@@ -40,7 +40,7 @@
                android:elevation="1dp"
                android:src="@drawable/drag_red" />
        </androidx.constraintlayout.widget.ConstraintLayout>
-</com.nsa.labelimages.maineditor.MovableFrameLayout>
+</com.nsa.flexjobs.maineditor.MovableFrameLayout>
 
 
 

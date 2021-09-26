@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.nsa.labelimages"
+        applicationId "com.nsa.flexjobs"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 13
@@ -32,7 +32,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildFeatures {
-        viewBinding true
+        viewBinding false
     }
     sourceSets {
         main {

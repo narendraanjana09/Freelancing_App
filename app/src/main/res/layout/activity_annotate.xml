@@ -52,7 +52,7 @@
 
         </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
-    <com.nsa.labelimages.testeditor.ZoomLayout
+    <com.nsa.flexjobs.testeditor.ZoomLayout
         android:id="@+id/zoomLayout"
         android:layout_width="match_parent"
         android:visibility="gone"
@@ -92,7 +92,7 @@
 
 
 
-    </com.nsa.labelimages.testeditor.ZoomLayout>
+    </com.nsa.flexjobs.testeditor.ZoomLayout>
     <LinearLayout
         android:id="@+id/text1"
         android:orientation="vertical"

@@ -140,31 +140,22 @@
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/note"
+
+            <EditText
+                android:id="@+id/detailED"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:elevation="20dp"
-                android:background="@color/black2"
                 android:layout_below="@id/taskInfoTV"
-                app:boxStrokeColor="@color/chocalte"
-                app:hintEnabled="true"
-                app:hintTextColor="@color/chocalte">
+                android:fontFamily="@font/handlee"
+                android:hint="Describe Yourself"
+                android:layout_margin="20dp"
+                android:inputType="text"
+                android:maxLength="300"
+                android:maxLines="5"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@drawable/sign_in_up_cursor" />
 
-                <EditText
-                    android:id="@+id/detailED"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/handlee"
-                    android:hint="Describe Yourself"
-                    android:inputType="text"
-                    android:maxLength="300"
-                    android:maxLines="5"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textCursorDrawable="@drawable/sign_in_up_cursor" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/filesnameTV"
@@ -172,9 +163,9 @@
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@id/note"
-                android:layout_alignEnd="@id/note"
-                android:layout_below="@id/note"
+                android:layout_alignStart="@id/detailED"
+                android:layout_alignEnd="@id/detailED"
+                android:layout_below="@id/detailED"
                 />
 
 
@@ -195,27 +186,21 @@
                    android:layout_gravity="center_vertical|end"
                    />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:boxStrokeColor="@color/chocalte"
-                android:background="@color/black2"
-                app:hintEnabled="true"
-                app:hintTextColor="@color/chocalte">
+
 
                 <EditText
                     android:id="@+id/documentED"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/handlee"
-                    android:hint="Attach a Document"
+                    android:hint="Attach Your Resume"
                     android:enabled="false"
                     android:inputType="text"
                     android:maxLength="200"
                     android:textColor="@color/white"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/white"
                     android:textCursorDrawable="@drawable/sign_in_up_cursor" />
-            </com.google.android.material.textfield.TextInputLayout>
+
 
            </FrameLayout>
 

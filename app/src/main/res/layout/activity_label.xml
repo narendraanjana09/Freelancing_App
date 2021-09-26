@@ -116,7 +116,7 @@
             android:textAllCaps="false"/>
     </RelativeLayout>
 
-    <com.nsa.labelimages.testeditor.ZoomLayout
+    <com.nsa.flexjobs.testeditor.ZoomLayout
         android:id="@+id/zoomLayout"
         android:layout_width="match_parent"
         android:visibility="gone"
@@ -157,7 +157,7 @@
 
 
 
-    </com.nsa.labelimages.testeditor.ZoomLayout>
+    </com.nsa.flexjobs.testeditor.ZoomLayout>
     <LinearLayout
         android:orientation="vertical"
         android:layout_below="@id/text1"

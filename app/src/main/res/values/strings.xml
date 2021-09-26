@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">All-In-One</string>
     <string name="title_activity_maps">Map</string>
-    <string name="google_client_id">1018363210699-vcgp8ophisr9hjfn1qmv8meqqv9q478o.apps.googleusercontent.com</string>
+    <string name="client_secret">jIYSuyYT0ttOQ6Cg2BUckgls</string>
+    <string name="google_client_id">243853881698-bg6ia93mnicpms488h4s0ju7ghv73p4a.apps.googleusercontent.com</string>
     <string name="rupee">₹</string>
     <string name="title_activity_my_tasks">MyTasksActivity</string>
     <string name="tab_text_1">Verified</string>

@@ -66,6 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="17sp"
+        android:visibility="invisible"
         android:layout_marginStart="20dp"
         android:text="Task Value"
         android:fontFamily="@font/handlee"
@@ -105,6 +106,7 @@
             android:layout_below="@id/taskInfoTV"
             android:layout_margin="10dp"
             android:textSize="15sp"
+            android:visibility="invisible"
             android:fontFamily="@font/handlee"
             android:textColor="@color/white"
             />
