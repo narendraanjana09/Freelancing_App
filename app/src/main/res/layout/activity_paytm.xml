@@ -77,6 +77,7 @@
         android:layout_height="wrap_content">
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/paytmLogo"
+        android:visibility="gone"
         android:layout_width="100dp"
         android:layout_marginEnd="10dp"
         android:layout_height="100dp"
@@ -146,40 +147,43 @@
             android:backgroundTint="@color/teal_200"
             />
     </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/txnProcessBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/progressBar"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/handlee"
+            android:onClick="paytmPay"
             android:text="Paytm"
             android:textAllCaps="false"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:visibility="gone"
             app:icon="@drawable/paytm"
             app:iconTint="@null"
-            android:fontFamily="@font/handlee"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/progressBar"
-            android:onClick="paytmPay"
             tools:ignore="OnClick" />
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/razorPayBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RazorPay"
-        android:textAllCaps="false"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        app:icon="@drawable/razor"
-        app:iconTint="@null"
-        android:fontFamily="@font/handlee"
-        android:layout_below="@id/progressBar"
-        android:layout_alignParentEnd="true"
-        android:onClick="razorPay"
-        tools:ignore="OnClick" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/razorPayBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/handlee"
+            android:onClick="razorPay"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:icon="@drawable/razor"
+            app:iconTint="@null"
+            tools:ignore="OnClick" />
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
@@ -189,24 +193,28 @@
             android:layout_below="@id/promoLayout"
             android:visibility="gone"
             />
-    <TextView
-        android:id="@+id/historyTV"
-        android:text="No Previous Data"
-        android:textColor="@color/white"
-        android:fontFamily="@font/handlee"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:textSize="15sp"
-        android:layout_below="@id/txnProcessBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/addMoneyHistory"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/historyTV"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        />
+
+        <TextView
+            android:id="@+id/historyTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/razorPayBTN"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/handlee"
+            android:text="No Previous Data"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/addMoneyHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/historyTV"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     </RelativeLayout>
 </ScrollView>
